@@ -24,7 +24,7 @@ public class InnerLoan {
 	
 	private double amountPastDue;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date approvalDate;
 	
 	private double availableCredit;
@@ -40,23 +40,23 @@ public class InnerLoan {
 	
 	private String currentBalanceIndicator;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date dateAccountOpened;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date dateAccountUpdated;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date dateClosed;
 	
 	private String daysInArrears;
 	
 	private String facsimile;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date finalPaymentDate;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date firstPaymentDate;
 	
 	private String foreName1;
@@ -71,7 +71,7 @@ public class InnerLoan {
 	
 	private double interestRateAtDisbursement;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date lastPaymentDate;
 	
 	private String nature;

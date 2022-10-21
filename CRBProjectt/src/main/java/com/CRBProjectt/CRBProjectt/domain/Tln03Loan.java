@@ -45,6 +45,7 @@ public class Tln03Loan {
 	private double amountPastDue;
 	
 	@Column(name = "approvalDate", nullable = false)
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date approvalDate;
 	
 	@Column(name = "availableCredit", nullable = false)
@@ -74,11 +75,11 @@ public class Tln03Loan {
 	private Date dateAccountOpened;
 	
 	@Column(name = "dateAccountUpdated", nullable = false)
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date dateAccountUpdated;
 	
 	@Column(name = "dateClosed", nullable = false)
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date dateClosed;
 	
 	@Column(name = "daysInArrears", nullable = false)
@@ -88,11 +89,11 @@ public class Tln03Loan {
 	private String facsimile;
 	
 	@Column(name = "finalPaymentDate", nullable = false)
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date finalPaymentDate;
 	
 	@Column(name = "firstPaymentDate", nullable = false)
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date firstPaymentDate;
 	
 	@Column(name = "foreName1", nullable = false)
@@ -114,7 +115,7 @@ public class Tln03Loan {
 	private double interestRateAtDisbursement;
 	
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	@Column(name = "lastPaymentDate", nullable = false)
 	private Date lastPaymentDate;
 	

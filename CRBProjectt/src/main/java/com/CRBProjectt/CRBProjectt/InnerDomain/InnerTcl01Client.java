@@ -13,7 +13,7 @@ public class InnerTcl01Client {
 	
 	private String employerName;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	private Date dateOfBirth;
 	
 	private String drivingLicenseNumber;

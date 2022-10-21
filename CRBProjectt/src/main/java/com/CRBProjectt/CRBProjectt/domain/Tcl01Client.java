@@ -28,7 +28,7 @@ public class Tcl01Client {
 	@Column(name ="employerName", nullable = false)
 	private String employerName;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyyMMdd")
 	@Column(name ="dateOfBirth", nullable = false)
 	private Date dateOfBirth;
 	
