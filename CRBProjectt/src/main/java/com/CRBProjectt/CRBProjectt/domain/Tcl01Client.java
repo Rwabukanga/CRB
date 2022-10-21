@@ -2,10 +2,12 @@ package com.CRBProjectt.CRBProjectt.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -17,71 +19,102 @@ public class Tcl01Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(name ="firstname", nullable = false)
 	private String firstname;
 	
+	@Column(name ="lastname", nullable = false)
 	private String lastname;
 	
+	@Column(name ="employerName", nullable = false)
 	private String employerName;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
+	@Column(name ="dateOfBirth", nullable = false)
 	private Date dateOfBirth;
 	
+	@Column(name ="drivingLicenseNumber", nullable = false)
 	private String drivingLicenseNumber;
 	
+	@Column(name ="emailAddress", nullable = false)
 	private String emailAddress;
 	
+	@Column(name ="employerAddressLine1", nullable = false)
 	private String employerAddressLine1;
 	
+	@Column(name ="employerAddressLine2", nullable = false)
 	private String employerAddressLine2;
 	
 	@ManyToOne
+	@JoinColumn(name="countryid")
 	private Country countryid;
 	
+	@Column(name ="employerTown", nullable = false)
 	private String employerTown;
 	
 	@ManyToOne
+	@JoinColumn(name="genderid")
 	private Gender genderid;
 	
+	@Column(name ="groupName", nullable = false)
 	private String groupName;
 	
+	@Column(name ="groupNumber", nullable = false)
 	private String groupNumber;
 	
+	@Column(name ="healthInsuranceNumber", nullable = false)
 	private String healthInsuranceNumber;
 	
+	@Column(name ="homeTelephone", nullable = false)
 	private String homeTelephone;
 	
 	@ManyToOne
+	@JoinColumn(name="maritstatusid")
 	private Tcl550MaritStatus maritstatusid;
 	
+	@Column(name ="mobileTelephone", nullable = false)
 	private String mobileTelephone;
 	
+	@Column(name ="passportNumber", nullable = false)
 	private String passportNumber;
 	
+	@Column(name ="physicalAddressLine1", nullable = false)
 	private String physicalAddressLine1;
 	
+	@Column(name ="physicalAddressLine2", nullable = false)
 	private String physicalAddressLine2;
 	
+	@Column(name ="physicalAddressPlotNumber", nullable = false)
 	private String physicalAddressPlotNumber;
 	
+	@Column(name ="physicalAddressPostalCode", nullable = false)
 	private String physicalAddressPostalCode;
 	
+	@Column(name ="placeOfBirth", nullable = false)
 	private String placeOfBirth;
 	
+	@Column(name ="postalAddressNumber", nullable = false)
 	private String postalAddressNumber;
 	
+	@Column(name ="postalCode", nullable = false)
 	private String postalCode;
 	
+	@Column(name ="residenceType", nullable = false)
 	private String residenceType;
 	
+	@Column(name ="socialSecurityNumber", nullable = false)
 	private String socialSecurityNumber;
 	
+	@Column(name ="studentNumber", nullable = false)
 	private String studentNumber;
 	
+	@Column(name ="surName", nullable = false)
 	private String surName;
 	
+	@Column(name ="workTelephone", nullable = false)
 	private String workTelephone;
 	
 	@ManyToOne
+	@JoinColumn(name="villageid")
 	private Tcl554ASvillage villageid;
 
 	public int getId() {

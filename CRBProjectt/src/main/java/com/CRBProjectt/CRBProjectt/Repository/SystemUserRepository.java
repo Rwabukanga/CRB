@@ -11,5 +11,8 @@ import com.CRBProjectt.CRBProjectt.domain.SystemUser;
 public interface SystemUserRepository extends JpaRepository<SystemUser, Integer> {
 
 	Optional<SystemUser> findById(int id);
+	
 	SystemUser findByUsername(String username);
+	
+	public SystemUser findByUsernameAndPassword(String username, String password);
 }

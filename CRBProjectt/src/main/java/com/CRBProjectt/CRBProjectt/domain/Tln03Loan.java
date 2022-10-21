@@ -2,12 +2,14 @@ package com.CRBProjectt.CRBProjectt.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -20,95 +22,137 @@ public class Tln03Loan {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	
+	@Column(name = "accountnumber", nullable = false)
 	private String accountnumber;
 	
+	@Column(name = "accountowner", nullable = false)
 	private String accountowner;
 	
+	@Column(name = "accountRepaymentTerm", nullable = false)
 	private String accountRepaymentTerm;
 	
+	@Column(name = "accountStatus", nullable = false)
 	private String accountStatus;
 	
+	@Column(name = "accountType", nullable = false)
 	private String accountType;
 	
+	@Column(name = "actualPaymentAmount", nullable = false)
 	private String actualPaymentAmount;
 	
+	@Column(name = "amountPastDue", nullable = false)
 	private double amountPastDue;
 	
+	@Column(name = "approvalDate", nullable = false)
 	private Date approvalDate;
 	
+	@Column(name = "availableCredit", nullable = false)
 	private double availableCredit;
 	
+	@Column(name = "category", nullable = false)
 	private String category;
 	
+	@Column(name = "classification", nullable = false)
 	private String classification;
 	
 //	@ManyToOne
 //	private Country countryid;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(name = "CurrencyType", nullable = false)
 	private CurrencyType CurrencyType;
 	
+	@Column(name = "currentBalance", nullable = false)
 	private double currentBalance;
 	
+	@Column(name = "currentBalanceIndicator", nullable = false)
 	private String currentBalanceIndicator;
 	
+	@Column(name = "dateAccountOpened", nullable = false)
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dateAccountOpened;
 	
+	@Column(name = "dateAccountUpdated", nullable = false)
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dateAccountUpdated;
 	
+	@Column(name = "dateClosed", nullable = false)
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dateClosed;
 	
+	@Column(name = "daysInArrears", nullable = false)
 	private String daysInArrears;
 	
+	@Column(name = "facsimile", nullable = false)
 	private String facsimile;
 	
+	@Column(name = "finalPaymentDate", nullable = false)
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date finalPaymentDate;
 	
+	@Column(name = "firstPaymentDate", nullable = false)
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date firstPaymentDate;
 	
+	@Column(name = "foreName1", nullable = false)
 	private String foreName1;
 	
+	@Column(name = "foreName2", nullable = false)
 	private String foreName2;
 	
+	@Column(name = "income", nullable = false)
 	private double income;
 	
+	@Column(name = "incomeFrequency", nullable = false)
 	private double incomeFrequency;
 	
+	@Column(name = "installmentsInArrears", nullable = false)
 	private String installmentsInArrears;
 	
+	@Column(name = "interestRateAtDisbursement", nullable = false)
 	private double interestRateAtDisbursement;
 	
+	
 	@JsonFormat(pattern="yyyy-MM-dd")
+	@Column(name = "lastPaymentDate", nullable = false)
 	private Date lastPaymentDate;
 	
+	@Column(name = "nature", nullable = false)
 	private String nature;
 	
+	@Column(name = "noOfDependants", nullable = false)
 	private String noOfDependants;
 	
+	@Column(name = "numberOfJointLoanParticipants", nullable = false)
 	private String numberOfJointLoanParticipants;
 	
+	@Column(name = "occupation", nullable = false)
 	private String occupation;
 	
+	@Column(name = "oldAccountNumber", nullable = false)
 	private String oldAccountNumber;
 	
+	@Column(name = "openingBalance", nullable = false)
 	private String openingBalance;
 	
+	@Column(name = "salutation", nullable = false)
 	private String salutation;
 	
+	@Column(name = "scheduledPaymentAmount", nullable = false)
 	private String scheduledPaymentAmount;
 	
+	@Column(name = "sectorOfActivity", nullable = false)
 	private String sectorOfActivity;
 	
+	@Column(name = "taxNumber", nullable = false)
 	private String taxNumber;
 	
+	@Column(name = "termsDuration", nullable = false)
 	private String termsDuration;
 	
 	@OneToOne
+	@JoinColumn(name="clientid")
 	private Tcl01Client clientid;
 
 	public int getId() {

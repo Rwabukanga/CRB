@@ -2,6 +2,7 @@ package com.CRBProjectt.CRBProjectt.domain;
 
 import java.util.Collection;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,9 +17,18 @@ public class SystemUser implements UserDetails{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	
+	@Column(name = "firstname", nullable = false)
 	private String firstname;
+	
+	@Column(name = "lastname", nullable = false)
 	private String lastname;
+	
+	@Column(name = "username", nullable = false)
 	private String username;
+	
+	@Column(name = "password", nullable = false)
 	private String password;
 	
 	
