@@ -45,6 +45,12 @@ public class Tcl01ClientServiceImplementation implements Tcl01ClientService {
 		// TODO Auto-generated method stub
 		return clientrepo.findAll();
 	}
+
+	@Override
+	public Optional<Tcl01Client> findByEmailAddress(String emailAddress) {
+		// TODO Auto-generated method stub
+		return clientrepo.findByEmailAddress(emailAddress);
+	}
 	
 	
 	

@@ -14,12 +14,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.CRBProjectt.CRBProjectt.Exeption.ClassificationException;
+import com.CRBProjectt.CRBProjectt.Exeption.ResourceNotFoundException;
 import com.CRBProjectt.CRBProjectt.InnerDomain.InnerLoan;
 import com.CRBProjectt.CRBProjectt.Service.Tcl01ClientService;
 import com.CRBProjectt.CRBProjectt.Service.Tln03LoanService;
 import com.CRBProjectt.CRBProjectt.Utility.Messages;
 import com.CRBProjectt.CRBProjectt.Utility.ResponseBean;
+import com.CRBProjectt.CRBProjectt.domain.AccountStatus;
+import com.CRBProjectt.CRBProjectt.domain.Accounttype;
+import com.CRBProjectt.CRBProjectt.domain.Category;
 import com.CRBProjectt.CRBProjectt.domain.CurrencyType;
+import com.CRBProjectt.CRBProjectt.domain.IncomeFrequency;
+import com.CRBProjectt.CRBProjectt.domain.Salutation;
 import com.CRBProjectt.CRBProjectt.domain.Tcl01Client;
 import com.CRBProjectt.CRBProjectt.domain.Tln03Loan;
 
@@ -54,14 +61,13 @@ public class Tln03LoanController {
 			loann.setAccountnumber(loan.getAccountnumber());
 			loann.setAccountowner(loan.getAccountowner());
 			loann.setAccountRepaymentTerm(loan.getAccountRepaymentTerm());
-			loann.setAccountStatus(loan.getAccountStatus());
-			loann.setAccountType(loan.getAccountType());
+			loann.setAccountStatus(AccountStatus.Current);
+			loann.setAccountType(Accounttype.BuildingLoan);
 			loann.setActualPaymentAmount(loan.getActualPaymentAmount());
 			loann.setAmountPastDue(loan.getAmountPastDue());
 			loann.setApprovalDate(loan.getApprovalDate());
 			loann.setAvailableCredit(loan.getAvailableCredit());
-			loann.setCategory(loan.getCategory());
-			loann.setClassification(loan.getClassification());
+			loann.setCategory(Category.CREDITDECAISSE);
 			loann.setClientid(clientt);
 			loann.setCurrencyType(CurrencyType.RWF);
 			loann.setCurrentBalance(loan.getCurrentBalance());
@@ -76,7 +82,7 @@ public class Tln03LoanController {
 			loann.setForeName1(loan.getForeName1());
 			loann.setForeName2(loan.getForeName2());
 			loann.setIncome(loan.getIncome());
-			loann.setIncomeFrequency(loan.getIncomeFrequency());
+			loann.setIncomeFrequency(IncomeFrequency.Annual);
 			loann.setInstallmentsInArrears(loan.getInstallmentsInArrears());
 			loann.setInterestRateAtDisbursement(loan.getInterestRateAtDisbursement());
 			loann.setLastPaymentDate(loan.getLastPaymentDate());
@@ -86,7 +92,7 @@ public class Tln03LoanController {
 			loann.setOccupation(loan.getOccupation());
 			loann.setOldAccountNumber(loan.getOldAccountNumber());
 			loann.setOpeningBalance(loan.getOpeningBalance());
-			loann.setSalutation(loan.getSalutation());
+			loann.setSalutation(Salutation.Advocate);
 			loann.setScheduledPaymentAmount(loan.getScheduledPaymentAmount());
 			loann.setSectorOfActivity(loan.getSectorOfActivity());
 			loann.setTaxNumber(loan.getTaxNumber());

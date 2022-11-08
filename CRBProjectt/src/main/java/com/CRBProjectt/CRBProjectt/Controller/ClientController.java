@@ -1,5 +1,6 @@
 package com.CRBProjectt.CRBProjectt.Controller;
 
+import java.util.Date;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +25,7 @@ import com.CRBProjectt.CRBProjectt.Utility.Messages;
 import com.CRBProjectt.CRBProjectt.Utility.ResponseBean;
 import com.CRBProjectt.CRBProjectt.domain.Country;
 import com.CRBProjectt.CRBProjectt.domain.Gender;
+import com.CRBProjectt.CRBProjectt.domain.ResidenceType;
 import com.CRBProjectt.CRBProjectt.domain.Tcl01Client;
 import com.CRBProjectt.CRBProjectt.domain.Tcl550MaritStatus;
 import com.CRBProjectt.CRBProjectt.domain.Tcl554ASvillage;
@@ -109,7 +111,7 @@ public class ClientController {
 			clientt.setPlaceOfBirth(client.getPlaceOfBirth());
 			clientt.setPostalAddressNumber(client.getPostalAddressNumber());
 			clientt.setPostalCode(client.getPostalCode());
-			clientt.setResidenceType(client.getResidenceType());
+			clientt.setResidenceType(ResidenceType.Owner);
 			clientt.setSocialSecurityNumber(client.getSocialSecurityNumber());
 			clientt.setStudentNumber(client.getStudentNumber());
 			clientt.setSurName(client.getSurName());

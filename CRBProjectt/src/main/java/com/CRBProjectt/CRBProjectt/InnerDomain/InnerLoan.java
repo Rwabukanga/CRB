@@ -5,7 +5,12 @@ import java.util.Date;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+import com.CRBProjectt.CRBProjectt.domain.AccountStatus;
+import com.CRBProjectt.CRBProjectt.domain.Accounttype;
+import com.CRBProjectt.CRBProjectt.domain.Category;
+import com.CRBProjectt.CRBProjectt.domain.Classification;
 import com.CRBProjectt.CRBProjectt.domain.CurrencyType;
+import com.CRBProjectt.CRBProjectt.domain.IncomeFrequency;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class InnerLoan {
@@ -16,9 +21,15 @@ public class InnerLoan {
 	
 	private String accountRepaymentTerm;
 	
-	private String accountStatus;
+//	private String accountStatus;
 	
-	private String accountType;
+	@Enumerated(EnumType.STRING)
+	private AccountStatus accountStatus;
+	
+//	private String accountType;
+	
+	@Enumerated(EnumType.STRING)
+	private Accounttype accountType;
 	
 	private String actualPaymentAmount;
 	
@@ -29,9 +40,15 @@ public class InnerLoan {
 	
 	private double availableCredit;
 	
-	private String category;
+//	private String category;
 	
-	private String classification;
+	@Enumerated(EnumType.STRING)
+	private Category category;
+	
+//	private String classification;
+	
+	@Enumerated(EnumType.STRING)
+	private Classification classification;
 	
 	@Enumerated(EnumType.STRING)
 	private CurrencyType CurrencyType;
@@ -65,7 +82,10 @@ public class InnerLoan {
 	
 	private double income;
 	
-	private double incomeFrequency;
+//	private double incomeFrequency;
+	
+	@Enumerated(EnumType.STRING)
+	private IncomeFrequency incomeFrequency;
 	
 	private String installmentsInArrears;
 	
@@ -121,23 +141,6 @@ public class InnerLoan {
 	public void setAccountRepaymentTerm(String accountRepaymentTerm) {
 		this.accountRepaymentTerm = accountRepaymentTerm;
 	}
-
-	public String getAccountStatus() {
-		return accountStatus;
-	}
-
-	public void setAccountStatus(String accountStatus) {
-		this.accountStatus = accountStatus;
-	}
-
-	public String getAccountType() {
-		return accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-	}
-
 	public String getActualPaymentAmount() {
 		return actualPaymentAmount;
 	}
@@ -168,22 +171,6 @@ public class InnerLoan {
 
 	public void setAvailableCredit(double availableCredit) {
 		this.availableCredit = availableCredit;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getClassification() {
-		return classification;
-	}
-
-	public void setClassification(String classification) {
-		this.classification = classification;
 	}
 
 	public CurrencyType getCurrencyType() {
@@ -289,15 +276,6 @@ public class InnerLoan {
 	public void setIncome(double income) {
 		this.income = income;
 	}
-
-	public double getIncomeFrequency() {
-		return incomeFrequency;
-	}
-
-	public void setIncomeFrequency(double incomeFrequency) {
-		this.incomeFrequency = incomeFrequency;
-	}
-
 	public String getInstallmentsInArrears() {
 		return installmentsInArrears;
 	}

@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -98,8 +100,11 @@ public class Tcl01Client {
 	@Column(name ="postalCode", nullable = false)
 	private String postalCode;
 	
-	@Column(name ="residenceType", nullable = false)
-	private String residenceType;
+//	@Column(name ="residenceType", nullable = false)
+//	private String residenceType;
+	
+	@Enumerated(EnumType.STRING)
+	private ResidenceType residenceType;
 	
 	@Column(name ="socialSecurityNumber", nullable = false)
 	private String socialSecurityNumber;
@@ -308,15 +313,6 @@ public class Tcl01Client {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
-
-	public String getResidenceType() {
-		return residenceType;
-	}
-
-	public void setResidenceType(String residenceType) {
-		this.residenceType = residenceType;
-	}
-
 	public String getSocialSecurityNumber() {
 		return socialSecurityNumber;
 	}
@@ -371,6 +367,14 @@ public class Tcl01Client {
 
 	public void setVillageid(Tcl554ASvillage villageid) {
 		this.villageid = villageid;
+	}
+
+	public ResidenceType getResidenceType() {
+		return residenceType;
+	}
+
+	public void setResidenceType(ResidenceType residenceType) {
+		this.residenceType = residenceType;
 	}
 
 	

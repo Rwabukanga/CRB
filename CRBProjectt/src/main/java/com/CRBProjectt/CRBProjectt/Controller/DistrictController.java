@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.CRBProjectt.CRBProjectt.Exeption.ResourceNotFoundException;
 import com.CRBProjectt.CRBProjectt.InnerDomain.InnerDistrict;
 import com.CRBProjectt.CRBProjectt.Service.DistrictService;
 import com.CRBProjectt.CRBProjectt.Service.ProvinceService;
@@ -40,32 +41,27 @@ public class DistrictController {
 		
 		ResponseBean rb = new ResponseBean();
 		
-		try {
+		
 			  Province c = null;
 			
 			  Optional<Province> p = provinceservice.findByid(district.getProvinceid());
 			 
 			 if(p.isPresent()) {
 				 c = p.get();
+				 District d = new District();
+				  
+				  d.setName(district.getName());
+				  d.setProvinceid(c);
+				  
+				  districtservice.createDistrict(d);
+				  
+					rb.setCode(Messages.SUCCESS_CODE);
+					rb.setDescription(Messages.save);
+					rb.setObject(d);	
+			 }else {
+				 throw new ResourceNotFoundException("Province Not Found");
 			 }
 			  
-			  District d = new District();
-			  
-			  d.setName(district.getName());
-			  d.setProvinceid(c);
-			  
-			  districtservice.createDistrict(d);
-			  
-				rb.setCode(Messages.SUCCESS_CODE);
-				rb.setDescription(Messages.save);
-				rb.setObject(d);	
-				
-	
-		}catch(Exception ex) {
-			ex.printStackTrace();
-			rb.setCode(Messages.ERROR_CODE);
-			rb.setDescription("fail to save");
-		}
 		
 		return new ResponseEntity<Object>(rb, HttpStatus.OK);
 		

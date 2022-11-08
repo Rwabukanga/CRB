@@ -2,6 +2,10 @@ package com.CRBProjectt.CRBProjectt.InnerDomain;
 
 import java.util.Date;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
+import com.CRBProjectt.CRBProjectt.domain.ResidenceType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class InnerTcl01Client {
@@ -58,7 +62,8 @@ public class InnerTcl01Client {
 	
 	private String postalCode;
 	
-	private String residenceType;
+	@Enumerated(EnumType.STRING)
+	private ResidenceType residenceType;
 	
 	private String socialSecurityNumber;
 	
@@ -272,14 +277,6 @@ public class InnerTcl01Client {
 		this.postalCode = postalCode;
 	}
 
-	public String getResidenceType() {
-		return residenceType;
-	}
-
-	public void setResidenceType(String residenceType) {
-		this.residenceType = residenceType;
-	}
-
 	public String getSocialSecurityNumber() {
 		return socialSecurityNumber;
 	}
@@ -318,6 +315,14 @@ public class InnerTcl01Client {
 
 	public void setVillageid(int villageid) {
 		this.villageid = villageid;
+	}
+
+	public ResidenceType getResidenceType() {
+		return residenceType;
+	}
+
+	public void setResidenceType(ResidenceType residenceType) {
+		this.residenceType = residenceType;
 	}
 	
 	

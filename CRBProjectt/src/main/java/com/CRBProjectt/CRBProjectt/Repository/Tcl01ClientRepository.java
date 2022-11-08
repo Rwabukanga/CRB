@@ -11,4 +11,6 @@ import com.CRBProjectt.CRBProjectt.domain.Tcl01Client;
 public interface Tcl01ClientRepository extends JpaRepository<Tcl01Client, Integer> {
 
 	public Optional<Tcl01Client> findByid(int id);
+	
+	Optional<Tcl01Client> findByEmailAddress(String emailAddress);
 }

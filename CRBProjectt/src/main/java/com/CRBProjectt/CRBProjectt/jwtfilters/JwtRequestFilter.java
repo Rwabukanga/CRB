@@ -16,6 +16,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.CRBProjectt.CRBProjectt.Exeption.DOBException;
+import com.CRBProjectt.CRBProjectt.Exeption.Unauthorized;
 import com.CRBProjectt.CRBProjectt.ServiceImplementation.MyUserDetailsService;
 import com.CRBProjectt.CRBProjectt.jwtutil.JwtUtil;
 
@@ -25,10 +27,11 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
 	
 	  @Autowired
-	    private MyUserDetailsService userDetailsService;
+	  private MyUserDetailsService userDetailsService;
 
-	    @Autowired
-	    private JwtUtil jwtUtil;
+	  @Autowired
+	  private JwtUtil jwtUtil;
+	  
 
 	    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 	            throws ServletException, IOException {
@@ -40,7 +43,14 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
 	        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
 	            jwt = authorizationHeader.substring(7);
-	            username = jwtUtil.extractUsername(jwt);
+	            
+//	            if(!jwt.isEmpty() && jwtUtil.isTokenExpired(jwt)) {
+//	            	throw new Unauthorized("Unauthorized");
+//	            }else {
+	            	 username = jwtUtil.extractUsername(jwt);
+//	            }
+	           
+	            
 	        }
 
 

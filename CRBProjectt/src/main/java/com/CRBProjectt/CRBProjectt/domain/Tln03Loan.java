@@ -32,11 +32,15 @@ public class Tln03Loan {
 	@Column(name = "accountRepaymentTerm", nullable = false)
 	private String accountRepaymentTerm;
 	
-	@Column(name = "accountStatus", nullable = false)
-	private String accountStatus;
+//	@Column(name = "accountStatus", nullable = false)
+//	private String accountStatus;
+	@Enumerated(EnumType.STRING)
+	private AccountStatus accountStatus;
 	
-	@Column(name = "accountType", nullable = false)
-	private String accountType;
+//	@Column(name = "accountType", nullable = false)
+//	private String accountType;
+	@Enumerated(EnumType.STRING)
+	private Accounttype accountType;
 	
 	@Column(name = "actualPaymentAmount", nullable = false)
 	private String actualPaymentAmount;
@@ -51,11 +55,15 @@ public class Tln03Loan {
 	@Column(name = "availableCredit", nullable = false)
 	private double availableCredit;
 	
-	@Column(name = "category", nullable = false)
-	private String category;
+//	@Column(name = "category", nullable = false)
+//	private String category;
+	@Enumerated(EnumType.STRING)
+	private Category category;
 	
-	@Column(name = "classification", nullable = false)
-	private String classification;
+//	@Column(name = "classification", nullable = false)
+//	private String classification;
+	@Enumerated(EnumType.STRING)
+	private Classification classification;
 	
 //	@ManyToOne
 //	private Country countryid;
@@ -105,8 +113,10 @@ public class Tln03Loan {
 	@Column(name = "income", nullable = false)
 	private double income;
 	
-	@Column(name = "incomeFrequency", nullable = false)
-	private double incomeFrequency;
+//	@Column(name = "incomeFrequency", nullable = false)
+//	private double incomeFrequency;
+	@Enumerated(EnumType.STRING)
+	private IncomeFrequency incomeFrequency;
 	
 	@Column(name = "installmentsInArrears", nullable = false)
 	private String installmentsInArrears;
@@ -137,8 +147,11 @@ public class Tln03Loan {
 	@Column(name = "openingBalance", nullable = false)
 	private String openingBalance;
 	
-	@Column(name = "salutation", nullable = false)
-	private String salutation;
+//	@Column(name = "salutation", nullable = false)
+//	private String salutation;
+	
+	@Enumerated(EnumType.STRING)
+	private Salutation salutation;
 	
 	@Column(name = "scheduledPaymentAmount", nullable = false)
 	private String scheduledPaymentAmount;
@@ -188,21 +201,9 @@ public class Tln03Loan {
 		this.accountRepaymentTerm = accountRepaymentTerm;
 	}
 
-	public String getAccountStatus() {
-		return accountStatus;
-	}
+	
 
-	public void setAccountStatus(String accountStatus) {
-		this.accountStatus = accountStatus;
-	}
-
-	public String getAccountType() {
-		return accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-	}
+	
 
 	public String getActualPaymentAmount() {
 		return actualPaymentAmount;
@@ -235,23 +236,6 @@ public class Tln03Loan {
 	public void setAvailableCredit(double availableCredit) {
 		this.availableCredit = availableCredit;
 	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getClassification() {
-		return classification;
-	}
-
-	public void setClassification(String classification) {
-		this.classification = classification;
-	}
-
 	public CurrencyType getCurrencyType() {
 		return CurrencyType;
 	}
@@ -355,12 +339,11 @@ public class Tln03Loan {
 	public void setIncome(double income) {
 		this.income = income;
 	}
-
-	public double getIncomeFrequency() {
+	public IncomeFrequency getIncomeFrequency() {
 		return incomeFrequency;
 	}
 
-	public void setIncomeFrequency(double incomeFrequency) {
+	public void setIncomeFrequency(IncomeFrequency incomeFrequency) {
 		this.incomeFrequency = incomeFrequency;
 	}
 
@@ -435,15 +418,6 @@ public class Tln03Loan {
 	public void setOpeningBalance(String openingBalance) {
 		this.openingBalance = openingBalance;
 	}
-
-	public String getSalutation() {
-		return salutation;
-	}
-
-	public void setSalutation(String salutation) {
-		this.salutation = salutation;
-	}
-
 	public String getScheduledPaymentAmount() {
 		return scheduledPaymentAmount;
 	}
@@ -471,7 +445,6 @@ public class Tln03Loan {
 	public String getTermsDuration() {
 		return termsDuration;
 	}
-
 	public void setTermsDuration(String termsDuration) {
 		this.termsDuration = termsDuration;
 	}
@@ -479,9 +452,48 @@ public class Tln03Loan {
 	public Tcl01Client getClientid() {
 		return clientid;
 	}
-
 	public void setClientid(Tcl01Client clientid) {
 		this.clientid = clientid;
+	}
+
+	public AccountStatus getAccountStatus() {
+		return accountStatus;
+	}
+
+	public void setAccountStatus(AccountStatus accountStatus) {
+		this.accountStatus = accountStatus;
+	}
+
+	public Accounttype getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(Accounttype accountType) {
+		this.accountType = accountType;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Classification getClassification() {
+		return classification;
+	}
+
+	public void setClassification(Classification classification) {
+		this.classification = classification;
+	}
+
+	public Salutation getSalutation() {
+		return salutation;
+	}
+
+	public void setSalutation(Salutation salutation) {
+		this.salutation = salutation;
 	}
 	
 	

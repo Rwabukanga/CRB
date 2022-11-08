@@ -8,6 +8,8 @@ import java.util.function.Function;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.CRBProjectt.CRBProjectt.Exeption.Unauthorized;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -33,8 +35,11 @@ public class JwtUtil {
 	        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
 	    }
 
-	    private Boolean isTokenExpired(String token) {
-	        return extractExpiration(token).before(new Date());
+	    public Boolean isTokenExpired(String token) {
+	    	
+	    return extractExpiration(token).before(new Date());
+	    	
+	       
 	    }
 
 	    public String generateToken(UserDetails userDetails) {

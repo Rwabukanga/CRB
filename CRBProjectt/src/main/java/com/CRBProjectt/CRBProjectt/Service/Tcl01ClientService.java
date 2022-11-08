@@ -12,5 +12,6 @@ public interface Tcl01ClientService {
 	public void deleteTcl01Client(int id);
 	public Optional<Tcl01Client> findByid(int id);
 	public List<Tcl01Client> findAll(Class c);
+	Optional<Tcl01Client> findByEmailAddress(String emailAddress);
 
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.CRBProjectt.CRBProjectt.Exeption.ResourceNotFoundException;
 import com.CRBProjectt.CRBProjectt.InnerDomain.InnerGender;
 import com.CRBProjectt.CRBProjectt.Service.GenderService;
 import com.CRBProjectt.CRBProjectt.Utility.Messages;
@@ -46,8 +47,8 @@ public class GenderController {
 				rb.setDescription(Messages.save);
 				rb.setObject(c);	
 				
-		}catch(Exception ex) {
-			ex.printStackTrace();
+		}catch(ResourceNotFoundException ex) {
+			
 			rb.setCode(Messages.ERROR_CODE);
 			rb.setDescription("fail to save");
 		}

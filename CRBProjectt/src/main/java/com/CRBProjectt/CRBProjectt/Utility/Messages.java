@@ -18,6 +18,9 @@ public class Messages {
     public static int TOKEN_NOT_FOUND=500;
     public static int INCORRECT_TOKEN=600;
     public static int NULLS_FOUND=700;
+    public static int Invalid_National_Id=602;
+    
+    
     
 
 }
