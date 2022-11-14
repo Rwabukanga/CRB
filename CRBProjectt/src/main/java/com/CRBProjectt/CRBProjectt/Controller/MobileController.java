@@ -25,7 +25,7 @@ import com.CRBProjectt.CRBProjectt.domain.Mobile;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="")
 public class MobileController {
 	
 	@Autowired

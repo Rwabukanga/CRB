@@ -21,7 +21,7 @@ import com.CRBProjectt.CRBProjectt.domain.Medicalclaim;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="")
 public class MedicalclaimController {
 	
 	@Autowired

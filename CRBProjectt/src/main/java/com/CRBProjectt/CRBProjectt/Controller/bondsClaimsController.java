@@ -20,7 +20,7 @@ import com.CRBProjectt.CRBProjectt.domain.Bondsclaim;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="")
 public class bondsClaimsController {
 	
 	@Autowired

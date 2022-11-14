@@ -29,7 +29,7 @@ import com.CRBProjectt.CRBProjectt.domain.Country;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="/")
 public class BouncedChequeController {
 	
 	@Autowired
@@ -41,7 +41,7 @@ public class BouncedChequeController {
 	
 	
 	@CrossOrigin
-	@RequestMapping(value="/update/bouncedcheque", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
+	@RequestMapping(value="update/bouncedcheque", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<Object> createBouncedCheque(HttpServletRequest request, @RequestBody InnerBouncedCheque bch){
 		
 		ResponseBean rb = new ResponseBean();

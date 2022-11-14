@@ -22,7 +22,7 @@ import com.CRBProjectt.CRBProjectt.domain.Lifeinsurance;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="")
 public class LifeinsuranceController {
 
 	@Autowired

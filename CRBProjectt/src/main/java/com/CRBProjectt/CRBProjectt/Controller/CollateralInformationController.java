@@ -21,7 +21,7 @@ import com.CRBProjectt.CRBProjectt.domain.CollateralInformation;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="/")
 public class CollateralInformationController {
 
 	@Autowired
@@ -29,7 +29,7 @@ public class CollateralInformationController {
 	
 	
 	@CrossOrigin
-	@RequestMapping(value="/update/collateral", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
+	@RequestMapping(value="update/collateral", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<Object> createCollateralInformation(HttpServletRequest request, @RequestBody InnerCollateralInformation coll){
 		
 		ResponseBean rb = new ResponseBean();

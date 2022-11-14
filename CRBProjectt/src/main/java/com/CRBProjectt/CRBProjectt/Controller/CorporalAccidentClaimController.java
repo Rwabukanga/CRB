@@ -23,7 +23,7 @@ import com.CRBProjectt.CRBProjectt.domain.CorporalAccidentClaim;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="")
 public class CorporalAccidentClaimController {
 	
 	@Autowired
@@ -45,7 +45,7 @@ public class CorporalAccidentClaimController {
 			corp.setClaimNumber(corporal.getClaimNumber());
 			corp.setClaimSettlementDate(corporal.getClaimSettlementDate());
 			corp.setClaimStatus(ClaimStatus.Pending);
-			corp.setClaimType(Claimtypes.Group_Personal_Accident);
+			corp.setClaimType(Claimtypes.GroupPersonalAccident);
 			corp.setIncidentDate(corporal.getIncidentDate());
 			corp.setIncidentDescription(corporal.getIncidentDescription());
 			corp.setInjuriesDescription(corporal.getInjuriesDescription());

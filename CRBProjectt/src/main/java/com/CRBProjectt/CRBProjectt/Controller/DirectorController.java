@@ -27,7 +27,7 @@ import com.CRBProjectt.CRBProjectt.domain.Salutation;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw/")
+@RequestMapping(value="/")
 public class DirectorController {
 
 	@Autowired
@@ -38,7 +38,7 @@ public class DirectorController {
 	
 	
 	@CrossOrigin
-	@RequestMapping(value="/update/director", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
+	@RequestMapping(value="update/director", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<Object> createCell(HttpServletRequest request, @RequestBody InnerDirector dir){
 		
 		ResponseBean rb = new ResponseBean();

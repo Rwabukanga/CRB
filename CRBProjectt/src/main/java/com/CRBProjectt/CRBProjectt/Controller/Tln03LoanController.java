@@ -32,7 +32,7 @@ import com.CRBProjectt.CRBProjectt.domain.Tln03Loan;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/loan")
+@RequestMapping(value="")
 public class Tln03LoanController {
 
 	
@@ -45,7 +45,7 @@ public class Tln03LoanController {
 	
 	
 	@CrossOrigin
-	@RequestMapping(value="/saveloan", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
+	@RequestMapping(value="/update/consumercredit", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<Object> createEmployee(HttpServletRequest request, @RequestBody InnerLoan loan){
 		
 		ResponseBean rb = new ResponseBean();

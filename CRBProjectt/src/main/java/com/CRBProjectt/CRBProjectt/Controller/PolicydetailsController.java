@@ -26,7 +26,7 @@ import com.CRBProjectt.CRBProjectt.domain.Salutation;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/data/rw")
+@RequestMapping("")
 public class PolicydetailsController {
 	
 	@Autowired

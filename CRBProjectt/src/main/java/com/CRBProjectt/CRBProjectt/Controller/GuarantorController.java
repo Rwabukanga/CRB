@@ -26,7 +26,7 @@ import com.CRBProjectt.CRBProjectt.domain.Guarantor;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/data/rw")
+@RequestMapping(value="/")
 public class GuarantorController {
 
 	
@@ -38,7 +38,7 @@ public class GuarantorController {
 	
 	
 	@CrossOrigin
-	@RequestMapping(value="/update/guarantor", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
+	@RequestMapping(value="update/guarantor", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<Object> createEmployee(HttpServletRequest request, @RequestBody InnerGuarantor guar){
 		
 		ResponseBean rb = new ResponseBean();

@@ -32,7 +32,7 @@ import com.CRBProjectt.CRBProjectt.domain.Tcl554ASvillage;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/client")
+@RequestMapping(value="/")
 public class ClientController {
 	
 	@Autowired
@@ -53,7 +53,7 @@ public class ClientController {
 	
 	
 	@CrossOrigin
-	@RequestMapping(value="/saveclient", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
+	@RequestMapping(value="update/customerdetails", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<Object> createClient(HttpServletRequest request, @RequestBody InnerTcl01Client client){
 		
 		ResponseBean rb = new ResponseBean();
